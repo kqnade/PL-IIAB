@@ -1,44 +1,46 @@
-// 必要なライブラリを取得
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <stdlib.h>	// rand() を使うために必要
+
+int main(void)
+{
+	int	x, y, z;	// 問題の数値 z = x/y;
+	int	a;		// ユーザが入力する答案の数値
+	int correctAnswers = 0;  // 正答数
+	int incorrectAnswers = 0;  // 誤答数
+
+	printf("💩計算ドリル\n");	// タイトルを表示
+
+	while (1) {
+		x = rand()%100 + 1;	// 1〜100の乱数を設定
+		y = rand()%10 + 1;	// 1〜10の乱数を設定
+		z = x * y;  // 正解を計算
+		printf("♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪♪\n");
+		printf("%d 個の💩をもらいました．\n", z);
+		printf("%d 人で山分けしましょう．\n", y);
+		printf("一人分は何個ですか？ > ");
+
+		if (scanf("%d", &a) == EOF) break;  // 答案を入力
 
 
-// メイン関数
- int main(void){
-  // 変数の宣言
-  // ランダムな数を保存する変数
-  int x;
-  int multibled;
-  int y; 
-   int answer;
-  // ユーザーが入力した数を保存する変数
-  int userInput;
-  // 乱数の種を設定
-  srand((unsigned)time(NULL));
+		if (a == x) {
+			printf("◯\n");
+			correctAnswers++;  // 正答数を増やす
+		} else {
+			printf("☓ ：正解は %d です．\n", z);
+			incorrectAnswers++;  // 誤答数を増やす
+		}
 
-  while (1)
-  {
-    // 1から100までの乱数を生成
-    x = rand() % 100 + 1;
-    // 1から9までの乱数を生成
-    y = rand() % 9 + 1;
-    // x * y を計算
-    multibled = x * y;
+		// 成績の表示
+		printf("【成績】\n");
+		printf("正答数：%d\n", correctAnswers);
+		printf("誤答数：%d\n", incorrectAnswers);
+		printf("正答率：%.2f%%\n", (float)correctAnswers / (correctAnswers + incorrectAnswers) * 100);
 
-    // 問題を表示
-    printf("問題: %d/%d は?\n", multibled, y);
-    // ユーザーが入力した数を受け取る
-    scanf("%d", &userInput);
-    // 正解かどうかを判定
-    if (userInput == x)
-    {
-      printf("正解です\n");
-    }
-    else
-    {
-      printf("不正解です\n");
-    }
-  }
-  return (0);
+	}
+
+	printf("\nおしまい．\n");
+  printf("\n最終成績\n");
+  printf(" %d 問中、%d問正解\n", correctAnswers + incorrectAnswers, correctAnswers);
+	printf(" 正答率：%.2f%%\n", (float)correctAnswers / (correctAnswers + incorrectAnswers) * 100);
+	return (0);
 }
