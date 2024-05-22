@@ -12,7 +12,7 @@ int main() {
         printf("ジャンケンポン {0, 2, 5} > ");
         if (scanf("%d", &user_input) != 1 || user_input < 0 || user_input > 5 || hands[user_input] == NULL) {
             printf("何だそれー？ もう一度!!\n");
-            while (getchar() != '\n'); // 入力バッファをクリア
+            while (getchar() != '\n');
             continue;
         }
         printf("あなたは%s 私は%s ", hands[user_input], hands[computer_hand]);
