@@ -9,7 +9,7 @@ int main() {
     srand(time(NULL));
 
     while (1) {
-        computer_hand = (rand() % 3) * 2;
+        computer_hand = (rand() % 3) * 2.5;
         printf("ジャンケンポン {0, 2, 5} > ");
         if (scanf("%d", &user_input) != 1 || user_input < 0 || user_input > 5 || hands[user_input] == NULL) {
             printf("何だそれー？\t私は%s\tもう一度!!\n", hands[computer_hand]);
