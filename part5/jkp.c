@@ -5,7 +5,6 @@
 int main() {
   char *hands[] = {"グー", NULL, "チョキ", NULL, NULL, "パー"};
   int user_input, computer_hand;
-
   srand(time(NULL));
 
   while (1) {
@@ -14,8 +13,7 @@ int main() {
     if (scanf("%d", &user_input) || user_input < 0 || user_input > 5 ||
         hands[user_input] == NULL) {
       printf("何だそれー？\t私は%s\tもう一度!!\n", hands[computer_hand]);
-      while (getchar() != '\n')
-        ;
+      while (getchar() != '\n');
       continue;
     }
 
