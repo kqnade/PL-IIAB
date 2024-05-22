@@ -3,7 +3,6 @@
 #include <time.h>
 
 int main(void){
-  {
 	int	x, y;
 	int	z;
   srand((unsigned long)time(NULL));
@@ -22,5 +21,4 @@ int main(void){
 		getchar();
 	}
 	return (0);
-}
 }
