@@ -2,28 +2,27 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define FLAGCOUNT 15
+#define DUPLICATE_FLAG 15
 
-int lineGen(int LineNum) {
-  static int LineArr[5] = {};
-  int randNum;
-  int min = LineNum*15;
-  int dupFlag[FLAGCOUNT] = {};
+int main(){
+  srand((unsigned long)time(NULL));
+  int dupFlag[DUPLICATE_FLAG] = {};
   int count = 5;
+  int temp;
 
-  while (count > 0){
-    randNum = rand()%FLAGCOUNT;
-    if (dupFlag[randNum] != 0){
-      continue;
-    } else {
-      dupFlag[randNum] = 1;
-      LineArr[5 - count] = randNum + min + 1;
-      count--;
+  while(count > 0){
+    temp = rand()%15;
+    if (dupFlag[temp] == 1) continue;
+    dupFlag[temp] = 1;
+    count--;
+  }
+
+  printf("B\n");
+  for(count=0; count<=16; count++){
+    if (dupFlag[count] == 1) {
+      printf("%d\n", count + 1);
     }
   }
-  return LineArr;
 
-}
-
-int main(void) {
+  return 0;
 }
