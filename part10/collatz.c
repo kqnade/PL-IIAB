@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int collatz(int x, int count) {
-  /* debugger */
+  /* Debugger */
   /* printf("%d\n", x); */
   if (x==1 && count != 0) return count;
   else if (x%2 == 0) return collatz(x/2, count+1);
