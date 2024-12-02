@@ -1,0 +1,46 @@
+reset
+
+left 19
+up 8
+
+on
+repeat 3
+  down 5
+  right 1
+  up 5
+  right 9
+end
+
+right 5
+down 5
+left 1
+up 5
+down 5
+
+repeat 2
+  left 3
+  up 3
+  left 1
+  down 3
+end
+
+left 10
+down 1
+right 1
+left 7
+up 1
+right 1
+
+left 4
+up 3
+left 1
+down 3
+left 6
+
+off 
+up 2
+right 16
+on
+up 1
+right 1
+down 1
